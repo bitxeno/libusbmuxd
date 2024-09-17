@@ -230,10 +230,10 @@ static void sanitize_udid(usbmuxd_device_info_t *devinfo)
 {
 	if (!devinfo)
 		return;
-	if (strlen(devinfo->udid) == 24) {
-		memmove(&devinfo->udid[9], &devinfo->udid[8], 17);
-		devinfo->udid[8] = '-';
-	}
+	// if (strlen(devinfo->udid) == 24) {
+	// 	memmove(&devinfo->udid[9], &devinfo->udid[8], 17);
+	// 	devinfo->udid[8] = '-';
+	// }
 	if (strcasecmp(devinfo->udid, "ffffffffffffffffffffffffffffffffffffffff") == 0) {
 		sprintf(devinfo->udid + 32, "%08x", devinfo->handle);
 	}
